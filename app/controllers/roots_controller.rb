@@ -1,8 +1,6 @@
 class RootsController < ApplicationController
   def root
-    @remote_ip = request.env['HTTP_X_FORWARDED_FOR']
-    @ip = request.ip
-    @ipp = request.remote_ip
-    @request = request
+    ip = request.remote_ip.delete('.').to_i
+    @ip = Ipblock.where("start < ? AND end > ?", ip, ip).first
   end
 end
