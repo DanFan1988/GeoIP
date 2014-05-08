@@ -1,3 +1,3 @@
 GeoIP::Application.routes.draw do
-  root :to => "root#root"
+  root :to => "roots#root"
 end
