@@ -1,0 +1,2 @@
+class IpblocksController < ApplicationController
+end
